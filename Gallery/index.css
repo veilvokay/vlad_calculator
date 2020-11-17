@@ -1,0 +1,49 @@
+* {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+}
+
+#sectionsListBlock, .constructor {
+	width: 80%;
+	max-width: 700px;
+	margin: 70px auto 50px;
+	border: solid 1px black;
+	padding: 25px;
+}
+
+.constructor-title {
+	font-size: 30px;
+	text-align: center;
+}
+
+.dropdown {
+	position: relative;
+	width: 200px;
+}
+
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+
+.dropdown-button {
+	box-sizing: content-box;
+	width: 100%;
+	font-size: 25px;
+	border: solid 1px black;
+}
+
+.dropdown-content {
+	display: none;
+	width: 100%;
+	position: absolute;
+	border: solid 1px black;
+}
+
+.dropdown-content > button {
+	width: 100%;
+	border: none;
+	height: 30px;
+	font-size: 20px;
+	line-height: 30px;
+}

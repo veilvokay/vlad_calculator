@@ -1,0 +1,17 @@
+
+/* Title fonts */
+
+@font-face {
+	font-family: 'OldStandardTT';
+	src: url('OldStandardTT.ttf');
+}
+
+@font-face {
+	font-family: 'RobotoMono';
+	src: url('RobotoMono.ttf');
+}
+
+@font-face {
+	font-family: 'Ruda';
+	src: url('Ruda.ttf');
+}

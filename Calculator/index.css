@@ -1,0 +1,345 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+.calculator-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+}
+
+.calculator-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+}
+
+
+
+.page-title {
+  text-align: center;
+  font-size: 30px;
+  margin: 20px;
+}
+
+
+
+.constructor-alert {
+  width: calc(100vw - 40px);
+  max-width: 400px;
+  min-height: 80px;
+  position: fixed;
+  top: 20px;
+  left: 50vw;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.constructor-alert-title {
+  font-size: 20px;
+  width: calc(100% - 40px);
+  margin: 8px 20px;
+}
+
+.constructor-alert-text {
+  font-size: 18px;
+  width: calc(100% - 60px);
+  margin: 13px 30px;
+}
+
+
+/* Page 0 */
+
+#calculatorPage0 button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100px;
+}
+
+
+/* Page 1 */
+
+#calculatorBusinessSphereList {
+  margin-left: 25%;
+  width: 50%;
+  list-style: none;
+}
+
+#calculatorBusinessSphereList li {
+  width: 100%;
+  height: 50px;
+  margin-top: 15px;
+  border-radius: 5px;
+  line-height: 50px;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  background-color: blue;
+}
+
+#calculatorBusinessSphereList li:hover {
+  background-color: lightblue;
+  color: black;
+}
+
+
+/* Page 2 */
+
+.calculator-dropdown {
+  position: relative;
+}
+
+.calculator-dropdown-title {
+  font-size: 23px;
+  line-height: 30px;
+  height: 30px;
+  padding: 10px 15px;
+  width: calc(100% - 32px);
+  border: solid 1px black;
+  z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.calculator-dropdown-content {
+  position: absolute;
+  display: none;
+  list-style: none;
+  width: 100%;
+  z-index: 2;
+}
+
+.calculator-dropdown-content li {
+  width: calc(100% - 20px);
+  font-size: 22px;
+  padding: 5px 10px;
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.calculator-dropdown-content li:hover {
+  background-color: grey;
+}
+
+
+.calculator-settings {
+  position: absolute;
+  width: 500px;
+  top: 300px;
+  left: 50%;
+  transform: translateX(calc(-100% - 30px));
+}
+
+#sizesDropdown {
+  width: calc(100% - 40px);
+  margin: 20px 20px 10px 20px;
+}
+
+.calculator-input {
+  height: 40px;
+  line-height: 30px;
+  font-size: 25px;
+  padding: 5px 15px;
+  width: calc(60% - 50px);
+  margin: 10px 10px 10px 20px;
+  border: solid 1px black;
+}
+
+#titleFontDropdown, #taglineFontDropdown {
+  width: calc(40% - 50px);
+  margin: 10px 20px 10px 10px;
+  float: right;
+}
+
+#mainColorDropdown {
+  display: inline-block;
+  width: calc(50% - 32px);
+  margin: 10px 10px 20px 20px;
+}
+
+#titleColorDropdown {
+  display: inline-block;
+  width: calc(50% - 32px);
+  margin: 10px 20px 20px 10px;
+}
+
+
+.calculator-icons {
+  position: absolute;
+  width: 500px;
+  top: 270px;
+  left: calc(50% + 30px);
+}
+
+.calculator-icons-title {
+  text-align: center;
+  font-size: 25px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.calculator-icons-list {
+  width: calc(100% - 42px);
+  margin: 20px;
+  height: 275px;
+  border: solid 1px black;
+}
+
+.calculator-icon {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 20%;
+  padding-bottom: 20%;
+  cursor: pointer;
+  background-color: white;
+}
+
+.calculator-icon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: calc(100% - 30px);
+  max-width: calc(100% - 30px);
+}
+
+.calculator-icon:hover {
+  background-color: lightgrey;
+}
+
+.calculator-selected-icon {
+  background-color: grey !important;
+}
+
+#page2ButtonBack, #page2ButtonNext, #page3ButtonBack, #page3ButtonNext, #page5ButtonBack, #page5ButtonNext {
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 25px;
+  text-align: center;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+}
+
+#page2ButtonBack, #page3ButtonBack, #page5ButtonBack {
+  transform: translateX(calc(-100% - 15px));
+}
+
+#page2ButtonNext, #page3ButtonNext, #page5ButtonNext {
+  transform: translateX(15px);
+}
+
+
+/* Page 3 */
+
+#boardCanvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px black;
+}
+
+
+/* Page 4 */
+
+.calculator-technologies-list {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: calc(100vw - 200px);
+}
+
+.calculator-technology {
+  position: relative;
+  width: calc(50% - 202px);
+  display: inline-block;
+  float: left;
+  margin: 50px 100px;
+  border: solid 1px black;
+}
+
+.calculator-technology-title {
+  text-align: center;
+  font-size: 25px;
+  height: 25px;
+  line-height: 25px;
+  padding: 5px;
+}
+
+.calculator-tecnology-img {
+  width: 100%;
+}
+
+.calculator-technology-price {
+  font-size: 20px;
+  line-height: 20px;
+  height: 20px;
+  width: calc(50% - 20px);
+  padding: 5px;
+  margin: 5px;
+}
+
+.calculator-technology-button {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+
+/* Page 5 */
+
+#calculatorPage5 p {
+  text-align: center;
+  font-size: 20px;
+  margin: 40px 0px 20px;
+}
+
+#chosenTechnologyImage, #boardImage {
+  max-width: 450px;
+  width: 90vw;
+  margin-left: 50vw;
+  transform: translateX(-50%);
+}
+
+
+/* Page 6 */
+
+label[for="nameInput"], label[for="phoneInput"], label[for="cityInput"], label[for="needHelpDropdown"] {
+  font-size: 25px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+#nameInput, #phoneInput, #cityInput, #needHelpDropdown {
+  width: 30%;
+  padding: 5px 5%;
+  margin: 10px 30%;
+}
+
+#finishButton {
+  width: 40%;
+  padding: 10px;
+  margin: 10px 30%;
+  font-size: 20px;
+}

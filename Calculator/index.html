@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <script type="text/javascript" src="alert.js"></script>
+    <script type="text/javascript" src="dropdown.js"></script>
+    <script type="text/javascript" src="navigation.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body>
+    <div class="calculator-container">
+      <div class="calculator-page" id="calculatorPage0">
+        <p class="page-title">Калькулятор вывески</p>
+        <button id="openCalculatorButton">Start</button>
+      </div>
+
+      <div class="calculator-page" id="calculatorPage1">
+        <p class="page-title">Какая у вас сфера деятельности?</p>
+        <ul id="calculatorBusinessSphereList"></ul>
+      </div>
+
+      <div class="calculator-page" id="calculatorPage2">
+        <p class="page-title">Выберите параметры вывески</p>
+        <div class="calculator-settings">
+          <div class="calculator-dropdown" id="sizesDropdown">
+            <p class="calculator-dropdown-title" id="sizesDropdownTitle">Sizes</p>
+            <ul class="calculator-dropdown-content" id="sizesDropdownContent"></ul>
+          </div>
+          <input class="calculator-input" id="titleInput" type="text" placeholder="Название">
+          <div class="calculator-dropdown" id="titleFontDropdown">
+            <p class="calculator-dropdown-title" id="titleFontDropdownTitle">Шрифт</p>
+            <ul class="calculator-dropdown-content" id="titleFontDropdownContent"></ul>
+          </div>
+          <input class="calculator-input" id="taglineInput" type="text" placeholder="Слоган">
+          <div class="calculator-dropdown" id="taglineFontDropdown">
+            <p class="calculator-dropdown-title" id="taglineFontDropdownTitle">Шрифт</p>
+            <ul class="calculator-dropdown-content" id="taglineFontDropdownContent"></ul>
+          </div>
+          <div class="calculator-dropdown" id="mainColorDropdown">
+            <p class="calculator-dropdown-title" id="mainColorDropdownTitle">Цвет вывески</p>
+            <ul class="calculator-dropdown-content" id="mainColorDropdownContent"></ul>
+          </div>
+          <div class="calculator-dropdown" id="titleColorDropdown">
+            <p class="calculator-dropdown-title" id="titleColorDropdownTitle">Цвет названия</p>
+            <ul class="calculator-dropdown-content" id="titleColorDropdownContent"></ul>
+          </div>
+        </div>
+        <div class="calculator-icons">
+          <p class="calculator-icons-title">Выберите иконку на вывеску</p>
+          <div class="calculator-icons-list" id="iconsList"></div>
+        </div>
+        <button id="page2ButtonBack">Back</button>
+        <button id="page2ButtonNext">Next</button>
+      </div>
+
+      <div class="calculator-page" id="calculatorPage3">
+        <p class="page-title">Ваш предварительный макет</p>
+        <canvas id="boardCanvas"></canvas>
+        <button id="page3ButtonBack">Back</button>
+        <button id="page3ButtonNext">Next</button>
+      </div>
+
+      <div class="calculator-page" id="calculatorPage4">
+        <p class="page-title">Выберите технологию</p>
+        <div class="calculator-technologies-list">
+          <div class="calculator-technology">
+            <p class="calculator-technology-title" id="technologyTitle_0">Технология 1</p>
+            <img class="calculator-tecnology-img" id="technologyExample_0">
+            <button class="calculator-technology-button" id="technologyButton_0">Выбрать</button>
+          </div>
+          <div class="calculator-technology">
+            <p class="calculator-technology-title" id="technologyTitle_1">Технология 2</p>
+            <img class="calculator-tecnology-img" id="technologyExample_1">
+            <button class="calculator-technology-button" id="technologyButton_1">Выбрать</button>
+          </div>
+          <div class="calculator-technology">
+            <p class="calculator-technology-title" id="technologyTitle_2">Технология 3</p>
+            <img class="calculator-tecnology-img" id="technologyExample_2">
+            <button class="calculator-technology-button" id="technologyButton_2">Выбрать</button>
+          </div>
+          <div class="calculator-technology">
+            <p class="calculator-technology-title" id="technologyTitle_3">Технология 4</p>
+            <img class="calculator-tecnology-img" id="technologyExample_3">
+            <button class="calculator-technology-button" id="technologyButton_3">Выбрать</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator-page" id="calculatorPage5">
+        <p>Chosen technology:</p>
+        <img id="chosenTechnologyImage">
+        <p>Your board:</p>
+        <img id="boardImage">
+        <p id="calculatorPrice">Price: Null</p>
+        <button id="page5ButtonBack">Back</button>
+        <button id="page5ButtonNext">Next</button>
+      </div>
+
+      <div class="calculator-page" id="calculatorPage6">
+        <p class="page-title">Final Page</p>
+        <label for="nameInput">Your name</label>
+        <input type="text" id="nameInput" class="calculator-input">
+        <label for="phoneInput">Your phone number</label>
+        <input type="text" id="phoneInput" class="calculator-input">
+        <label for="cityInput">Your city</label>
+        <input type="text" id="cityInput" class="calculator-input">
+        <label for="needHelpDropdown">Do you need help in installation?</label>
+        <div class="calculator-dropdown" id="needHelpDropdown">
+          <p class="calculator-dropdown-title" id="needHelpDropdownTitle">Select an option</p>
+          <ul class="calculator-dropdown-content" id="needsHelpDropdownContent"></ul>
+        </div>
+        <button id="finishButton">Create order</button>
+      </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDgisPU1j-aQ6T2S4TUuyNmRCr25YmbHHY",
+        authDomain: "vladsweeter-1604246747615.firebaseapp.com",
+        databaseURL: "https://vladsweeter-1604246747615.firebaseio.com",
+        storageBucket: "vladsweeter-1604246747615.appspot.com",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Get a reference to the storage service, which is used to create references in your storage bucket
+      var storage = firebase.storage();
+
+      // Create a storage reference from our storage service
+      var storageRef = storage.ref();
+
+      // Points to 'boards'
+      var boards = storageRef.child('images');
+    </script>
+
+
+  </body>
+</html>
